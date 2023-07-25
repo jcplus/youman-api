@@ -50,3 +50,4 @@ Thumbs.db
 .env
 .user.ini
 .htaccess
+.well-known
