@@ -32,6 +32,13 @@ const tutorialRouter = require('./routes/tutorial');
 const userRouter = require('./routes/user');
 const wechatRouter = require('./routes/wechat');
 
+app.get('/api', (req, res) => {
+	res.json({
+		name: '友漫API',
+		version: '1.0.0'
+	});
+});
+
 app.use('/api/chat', chatRouter);
 app.use('/api/comment', CommentRouter);
 app.use('/api/favourite', FavouriteRouter);
