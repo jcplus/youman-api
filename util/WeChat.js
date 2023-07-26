@@ -5,6 +5,7 @@ const xml2js = require('xml2js');
 const WechatPayLib = require('wechatpay-node-v3');
 require('dotenv').config();
 
+const APP_URL = process.env.APP_URL;
 const WECHAT_APP_ID = process.env.WECHAT_APP_ID;
 const WECHAT_APP_SECRET = process.env.WECHAT_APP_SECRET;
 const WECHAT_PAY_API_KEY_V3 = process.env.WECHAT_PAY_API_KEY_V3;
@@ -159,7 +160,7 @@ const pay = async function (data) {
         ...data,
         appid: WECHAT_APP_ID,
         mchid: WECHAT_MERCHANT_ID,
-        notify_url: 'https://api-51645-9-1318406536.sh.run.tcloudbase.com/api/wechat/order-notify-callback',
+        notify_url: `${APP_URL}wechat/order-notify-callback`,
     };
 
     // Get the signature and authorization
